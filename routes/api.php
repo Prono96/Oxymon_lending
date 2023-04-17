@@ -21,4 +21,7 @@ Route::group([
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);    
+
+    // User Loan Routes
+    Route::post('/user-loan', [UserLoanController::class, 'applyLoan'])->middleware('auth:api');
 });
